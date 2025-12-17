@@ -8,7 +8,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
       - name: Setup OpenTofu
-        uses: opentofu/setup-opentofu@e95ccdd20623115bfd7d47df14a3250d6066a9d0
+        uses: opentofu/setup-opentofu@v1.0.6
         with:
           tofu_wrapper: true
       - name: Tofu Init
