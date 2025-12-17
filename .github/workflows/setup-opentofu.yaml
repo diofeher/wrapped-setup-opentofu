@@ -14,6 +14,6 @@ jobs:
       - name: Tofu Init
         run: tofu init
       - name: Tofu Plan
-        run: tofu plan -detailed-exitcode -no-color -out tfplan --
+        run: tofu plan -no-color -out tfplan --
       - name: Tofu Apply
-        run: tofu apply -auto-approve tfplan --
+        run: tofu apply -auto-approve
