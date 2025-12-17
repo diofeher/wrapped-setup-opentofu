@@ -11,6 +11,8 @@ jobs:
         uses: opentofu/setup-opentofu@v1.0.6
         with:
           tofu_wrapper: false
+      - name: Tofu Init
+        run: tofu init
       - name: Tofu Plan
         run: tofu plan -detailed-exitcode -no-color -out tfplan --
       - name: Tofu Apply
