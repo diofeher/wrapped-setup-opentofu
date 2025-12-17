@@ -14,6 +14,9 @@ jobs:
       - name: Tofu Init
         run: tofu init
       - name: Tofu Plan
-        run: tofu plan -no-color -out tfplan --
+        run: tofu plan
+      - run: echo ${{ steps.plan.outputs.stdout }}
+      - run: echo ${{ steps.plan.outputs.stderr }}
+      - run: echo ${{ steps.plan.outputs.exitcode }}
       - name: Tofu Apply
         run: tofu apply -auto-approve
