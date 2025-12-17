@@ -11,6 +11,11 @@ resource "random_string" "example" {
   special = false
   upper   = false
   lower   = true
+
+  # Forcing stop
+  provisioner "local-exec" {
+    command = "sleep 30"
+  }
 }
 
 output "example" {
