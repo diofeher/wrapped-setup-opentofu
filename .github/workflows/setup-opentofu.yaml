@@ -14,7 +14,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
       - name: Setup OpenTofu
-        uses: opentofu/setup-opentofu@3d18cc4a77be491c5cd70cf452cb57f98c893853
+        uses: opentofu/setup-opentofu@54fcc87530c6f748dcb2e6c0c957f442fb3bb60a
         with:
           cache: true
           tofu_wrapper: false
