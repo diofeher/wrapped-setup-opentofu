@@ -7,6 +7,25 @@ env:
   ACTIONS_RUNNER_DEBUG: true
 
 jobs:
+  tofu-plan:
+    name: Tofu Plan
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+      - name: Setup OpenTofu
+        uses: opentofu/setup-opentofu@54fcc87530c6f748dcb2e6c0c957f442fb3bb60a
+        with:
+          cache: true
+          tofu_wrapper: false
+      - name: Tofu Init
+        run: tofu init
+      - name: Tofu Plan
+        id: plan
+        run: tofu plan
+      - run: echo "${{ steps.plan.outputs.stdout }}"
+      - run: echo "${{ steps.plan.outputs.stderr }}"
+      - run: echo "${{ steps.plan.outputs.exitcode }}"
   tofu-plan-apply:
     name: Tofu Plan and Apply
     runs-on: ubuntu-latest
