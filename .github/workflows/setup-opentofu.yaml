@@ -13,7 +13,7 @@ jobs:
         uses: opentofu/setup-opentofu@3d18cc4a77be491c5cd70cf452cb57f98c893853
         with:
           cache: true
-          # tofu_wrapper: true
+          tofu_wrapper: false
       - name: Tofu Init
         run: tofu init
       - name: Tofu Plan
